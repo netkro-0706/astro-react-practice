@@ -41,3 +41,15 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+# setup
+
+# 새 프로젝트 만들기
+
+npm create astro@latest my-project
+yarn add @astrojs/react react react-dom
+yarn add @vanilla-extract/css @vanilla-extract/vite-plugin
+yarn add @nanostores/react
+yarn add axios
+yarn add swr
+yarn add -D @biomejs/biome
