@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useProducts } from '../../hooks/useProducts';
+import ProductCard from './ProductCard';
 
-export default function ProductList() {
+const ProductList = () => {
   const { products, loading, error } = useProducts();
 
   useEffect(() => {
@@ -10,7 +11,19 @@ export default function ProductList() {
 
   return (
     <div className="">
-      <span>product</span>
+      {products.map((product) => {
+        return (
+          <ProductCard
+            key={product.id}
+            title={product.title}
+            description={product.description}
+            img={product.images[0]}
+            price={product.price}
+          />
+        );
+      })}
     </div>
   );
-}
+};
+
+export default ProductList;
