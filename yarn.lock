@@ -622,6 +622,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@nanostores/persistent@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@nanostores/persistent/-/persistent-1.2.0.tgz#e40499b6649c03e92f90fd2bf58b0b64bb673024"
+  integrity sha512-kf5WOLpVI9Pk+AwXHIax4in3pesNe8299BEGQ2H8kgI05SZw7KKWCDv7bt2FOlND8E5y7rO5PRW34q0UCAl/DA==
+
 "@nanostores/react@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@nanostores/react/-/react-1.0.0.tgz"

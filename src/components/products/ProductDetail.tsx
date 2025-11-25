@@ -4,8 +4,8 @@ import useSWR from 'swr';
 import { useEffect } from 'react';
 import { api } from '../../lib/axios';
 import type { Product } from '../../types/product';
-import ImageList from './detail/imageList';
-import Description from './detail/description';
+import ImageList from './detail/ImageList';
+import Description from './detail/Description';
 import {
   productContainer,
   imageSection,
@@ -35,6 +35,7 @@ const ProductDetail = ({ id }: Props) => {
       </div>
       <div className={descriptionSection}>
         <Description
+          id={id}
           title={data.title}
           price={data.price}
           description={data.description}
