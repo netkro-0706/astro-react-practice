@@ -1,21 +1,26 @@
 'use client';
 
-import { CardBox, Title, Description } from './ProductCard.css';
+import { CardBox, Title } from './ProductCard.css';
+import { clampText } from '../../styles/text.css';
 
 interface Props {
   title: string;
   img: string;
   price: number;
   description: string;
+  id: number;
 }
 
-const ProductCard = ({ title, img, price, description }: Props) => {
+const ProductCard = ({ title, img, price, description, id }: Props) => {
+  const strId = String(id);
   return (
     <div className={CardBox}>
-      <p className={Title}>{title}</p>
-      <img src={img} width={320} height={240} loading="lazy" />
-      <p>${price}</p>
-      <p className={Description}>{description}</p>
+      <a href={`/products/${strId}`}>
+        <p className={`${Title} ${clampText({ lines: 1 })}`}>{title}</p>
+        <img src={img} width={320} height={240} loading="lazy" />
+        <p>${price}</p>
+        <p className={clampText({ lines: 4 })}>{description}</p>
+      </a>
     </div>
   );
 };

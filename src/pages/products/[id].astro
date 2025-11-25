@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import ProductDetail from "../../components/products/ProductDetail";
+import { api } from "../../lib/axios"
+
+export const prerender = false;
+
+const id = Astro.params.id!;
+const { data } = await api.get(`/products/${id}`);
+const title = data.title ?? "detail"
+---
+
+<Layout title={title}>
+  <ProductDetail id={id} client:load/>
+</Layout>

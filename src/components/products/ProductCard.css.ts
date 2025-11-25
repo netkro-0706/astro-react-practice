@@ -12,15 +12,5 @@ export const CardBox = style({
 export const Title = style({
   background: '#ccc',
   fontSize: '24px',
-  width: 'fit-content',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
-});
-
-export const Description = style({
-  display: '-webkit-box',
-  WebkitLineClamp: 4,
-  WebkitBoxOrient: 'vertical',
-  overflow: 'hidden',
+  maxWidth: '320px',
 });
