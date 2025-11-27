@@ -2,11 +2,18 @@
 import Layout from "../../layouts/Layout.astro"
 import ProductDetail from "../../components/products/ProductDetail";
 import { api } from "../../lib/axios"
+import type { Product } from "../../types/product";
 
-export const prerender = false;
+export async function getStaticPaths() {
+  const { data } = await api.get<Product[]>('/products?limit=50&offset=0');
+
+  return data.map((product) => ({
+    params: { id: String(product.id) },
+  }));
+}
 
 const id = Astro.params.id!;
-const { data } = await api.get(`/products/${id}`);
+const { data } = await api.get<Product>(`/products/${id}`);
 const title = data.title ?? "detail"
 ---
 

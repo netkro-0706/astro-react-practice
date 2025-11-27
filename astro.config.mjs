@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
 export default defineConfig({
-  output: 'server',
+  output: 'static',
   integrations: [react()],
   vite: {
     plugins: [vanillaExtractPlugin()],
