@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useProducts } from '../../hooks/useProducts';
 import ProductCard from './ProductCard';
+import { productBox } from './ProductList.css';
 
 const ProductList = () => {
   const { products, loading, error } = useProducts();
@@ -10,7 +11,7 @@ const ProductList = () => {
   }, [loading]);
 
   return (
-    <div className="">
+    <div className={productBox}>
       {products.map((product) => {
         return (
           <ProductCard
@@ -18,7 +19,7 @@ const ProductList = () => {
             id={product.id}
             title={product.title}
             description={product.description}
-            img={product.images[0]}
+            images={product.images}
             price={product.price}
           />
         );

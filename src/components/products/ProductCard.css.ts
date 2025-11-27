@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 export const CardBox = style({
   width: '340px',
-  height: '450px',
+  height: '500px',
   margin: '5px',
   padding: '10px',
   border: '1px solid black',
