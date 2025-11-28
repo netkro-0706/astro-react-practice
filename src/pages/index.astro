@@ -1,11 +1,12 @@
 ---
 import ProductList from "../components/products/ProductList"
+import ProductTitle from "../components/products/ProductTitle";
 import Layout from "../layouts/Layout.astro"
 
 export const prerender = true;
 ---
 
 <Layout title="Home">
-		<h1>ProductList</h1>
-		<ProductList client:load/>
+		<ProductTitle client:load/>
+		<ProductList client:visible/>
 </Layout>
