@@ -6,10 +6,11 @@ export const ProductTitleBox = style({
   alignItems: 'center',
   width: '100%',
   height: 'calc(100vh - 27.5px)',
-  backgroundImage: 'url(/banner.png)',
+  backgroundImage: 'url(/banner.webp)',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
+  willChange: 'auto',
 });
 
 export const Title = style({

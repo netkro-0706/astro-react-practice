@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import NumbersBox from './NumbersBox';
+import { cardImage } from './CardImage.css';
 
 interface Props {
   images: string[];
@@ -12,12 +13,7 @@ const CardImage = ({ images }: Props) => {
 
   return (
     <div>
-      <img
-        src={images[selectedImage]}
-        width={320}
-        height={240}
-        loading="lazy"
-      />
+      <img src={images[selectedImage]} className={cardImage} loading="lazy" />
       <NumbersBox imagesOfNumber={images.length} setNumber={setSelectedImage} />
     </div>
   );

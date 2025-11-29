@@ -1,4 +1,6 @@
 ---
+import SmallModal from '../shared/modal/\bSmallModal';
+
 interface Props {
   title?: string
 }
@@ -12,6 +14,8 @@ const { title = "Astro React Practice" } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <link rel="preload" as="image" href="/banner.webp" />
+    <link rel="dns-prefetch" href="https://i.imgur.com"/>
   </head>
   <body>
     <header>
@@ -24,5 +28,6 @@ const { title = "Astro React Practice" } = Astro.props;
     <main>
       <slot />
     </main>
+    <SmallModal client:load/>
   </body>
 </html>

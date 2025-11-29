@@ -20,19 +20,11 @@ export const cartItems = persistentAtom(
   }
 );
 
-export const addToCart = (productId: string, amount = 1) => {
+export const addToCart = (productId: string, count: number) => {
   cartItems.set({
     ...cartItems.get(),
-    [productId]: (cartItems.get()[productId] ?? 0) + amount,
+    [productId]: count,
   });
-};
-
-export const subFromCart = (productId: string, amount = 1) => {
-  const current = cartItems.get()[productId] ?? 0;
-  const next = Math.max(0, current - amount);
-  const nextState = { ...cartItems.get(), [productId]: next };
-  if (next === 0) delete nextState[productId];
-  cartItems.set(nextState);
 };
 
 export const resetToCart = (productId: string) => {
